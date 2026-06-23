@@ -1,69 +1,251 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Statik Consultants 1.0</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Statik Consultants | Data, Analytics & AI Consulting</title>
+  <meta name="description" content="Statik Consultants helps retail, logistics, and healthcare organizations turn operational data into practical intelligence and measurable business improvement." />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <span class="logo-mark">⌁</span>
+        <span>
+          <strong>STATIK</strong>
+          <small>CONSULTANTS</small>
+        </span>
+      </a>
 
-<nav>
-    <div class="logo">STATIK CONSULTANTS</div>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+      <button class="menu-toggle" id="menuToggle">☰</button>
 
-<header>
-    <h1>Building Strong Foundations for Business Success</h1>
-    <p>Professional consulting, strategy, and project management solutions.</p>
-    <a href="#contact" class="btn">Get Started</a>
-</header>
-
-<section id="about">
-    <h2>About Us</h2>
-    <p>
-        Statik Consultants 1.0 helps businesses improve performance,
-        streamline operations, and achieve sustainable growth.
-    </p>
-</section>
-
-<section id="services">
-    <h2>Our Services</h2>
-
-    <div class="cards">
-        <div class="card">
-            <h3>Business Consulting</h3>
-            <p>Strategic guidance for growth and success.</p>
-        </div>
-
-        <div class="card">
-            <h3>Project Management</h3>
-            <p>Delivering projects on time and within budget.</p>
-        </div>
-
-        <div class="card">
-            <h3>Process Improvement</h3>
-            <p>Optimizing operations and increasing efficiency.</p>
-        </div>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#industries">Industries</a>
+        <a href="#contact" class="nav-cta">Book a Workshop</a>
+      </div>
     </div>
-</section>
+  </nav>
 
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: info@statikconsultants.co.za</p>
-    <p>Phone: +27 XX XXX XXXX</p>
-</section>
+  <header class="hero" id="home">
+    <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1576485303975-27a3d132cb0a?q=80&w=2070&auto=format&fit=crop');"></div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?q=80&w=2072&auto=format&fit=crop');"></div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=2070&auto=format&fit=crop');"></div>
 
-<footer>
-    <p>© 2026 Statik Consultants. All Rights Reserved.</p>
-</footer>
+    <div class="hero-overlay"></div>
 
-<script src="script.js"></script>
+    <div class="hero-content">
+      <p class="eyebrow">Signal Stability</p>
+      <h1>
+        Better decisions.<br>
+        Better systems.<br>
+        <span>Better tomorrows.</span>
+      </h1>
+      <p class="hero-text">
+        We help retail, logistics, and healthcare organizations turn fragmented operational data into practical intelligence and measurable business improvement.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn primary">Book a Discovery Workshop</a>
+        <a href="#services" class="btn secondary">Explore Our Services</a>
+      </div>
+    </div>
+
+    <div class="slider-dots">
+      <button class="dot active"></button>
+      <button class="dot"></button>
+      <button class="dot"></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section about" id="about">
+      <div class="container two-col">
+        <div>
+          <p class="eyebrow dark">Our Philosophy</p>
+          <h2>Intelligence should create better tomorrows.</h2>
+          <p>
+            Statik Consultants was shaped by a simple but powerful truth: in environments where every decision carries weight, data is never abstract.
+          </p>
+          <p>
+            We believe better decisions, grounded in real data, honest analysis, and practical intelligence, can change outcomes for businesses and the people who depend on them.
+          </p>
+        </div>
+
+        <div class="image-card">
+          <img src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&w=2069&auto=format&fit=crop" alt="Professionals collaborating">
+          <div class="image-card-content">
+            <h3>We build intelligence that works in the real world.</h3>
+            <ul>
+              <li>South African context. Global-grade analytics.</li>
+              <li>Outcomes first. Always.</li>
+              <li>Start focused. Prove value. Then scale.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="container">
+        <p class="eyebrow dark">What We Do</p>
+        <h2>From visibility to foresight to optimization.</h2>
+
+        <div class="cards">
+          <article class="card">
+            <div class="icon">▣</div>
+            <p class="card-tag">See clearly. Decide confidently.</p>
+            <h3>Data Analytics</h3>
+            <p>Turn raw, fragmented data into structured visibility through dashboards, KPI monitoring, and a single source of truth.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">◎</div>
+            <p class="card-tag">Stop reacting. Start anticipating.</p>
+            <h3>Data Science</h3>
+            <p>Move beyond what happened to what is likely to happen next using forecasting, segmentation, and predictive models.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">✦</div>
+            <p class="card-tag">Intelligence embedded where it matters.</p>
+            <h3>AI Solutions</h3>
+            <p>Design practical AI tools, predictive alerts, optimization engines, and automation that support real workflows.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">↗</div>
+            <p class="card-tag">Know where to start.</p>
+            <h3>Decision Advisory</h3>
+            <p>Identify the highest-value analytics and AI opportunities and build a roadmap connected to measurable outcomes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section industries" id="industries">
+      <div class="container">
+        <p class="eyebrow light">Where We Work</p>
+        <h2>Three industries. One belief. Better data creates better outcomes.</h2>
+
+        <div class="industry-grid">
+          <article class="industry-card" style="background-image: url('https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?q=80&w=2072&auto=format&fit=crop');">
+            <div>
+              <h3>Retail</h3>
+              <p>Margin analytics, pricing optimization, demand forecasting, and inventory visibility.</p>
+            </div>
+          </article>
+
+          <article class="industry-card" style="background-image: url('https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=2070&auto=format&fit=crop');">
+            <div>
+              <h3>Logistics</h3>
+              <p>Cost-to-serve visibility, route optimization, warehouse analytics, and supply chain risk forecasting.</p>
+            </div>
+          </article>
+
+          <article class="industry-card" style="background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop');">
+            <div>
+              <h3>Healthcare</h3>
+              <p>Patient flow analytics, demand planning, operational efficiency, and POPIA-aligned data practices.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container two-col">
+        <div>
+          <p class="eyebrow dark">Engage</p>
+          <h2>Let's find your highest-impact opportunity.</h2>
+          <p>
+            Every engagement starts with a conversation. Tell us where the pressure is, and we will show you where the data can help.
+          </p>
+
+          <div class="steps">
+            <div><strong>1</strong> We review your request</div>
+            <div><strong>2</strong> We schedule a discovery workshop</div>
+            <div><strong>3</strong> We come prepared</div>
+            <div><strong>4</strong> You leave with clarity</div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <h3>Book a Discovery Workshop</h3>
+
+          <label>Full Name *</label>
+          <input type="text" required>
+
+          <label>Organization *</label>
+          <input type="text" required>
+
+          <label>Industry *</label>
+          <select required>
+            <option value="">Select Industry</option>
+            <option>Retail</option>
+            <option>Logistics & Supply Chain</option>
+            <option>Healthcare</option>
+            <option>Other</option>
+          </select>
+
+          <label>Email Address *</label>
+          <input type="email" required>
+
+          <label>Biggest data challenge? *</label>
+          <textarea rows="5" required></textarea>
+
+          <button type="submit" class="btn primary full">Submit Request</button>
+          <p class="form-note">By submitting, you agree to responsible, POPIA-aligned data handling.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>Ready to find your highest-impact opportunity?</h2>
+        <p>Tell us where the pressure is, and we will show you where the data can help.</p>
+        <a href="#contact" class="btn dark">Book a Discovery Workshop</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3>statik<span>consultants</span></h3>
+        <p>Turning uncertainty into direction through data, analytics, and AI.</p>
+      </div>
+
+      <div>
+        <h4>Navigation</h4>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#industries">Industries</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p>info@statikconsultants.co.za</p>
+        <p>Cape Town, South Africa</p>
+        <p>POPIA-aligned data practices</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="year"></span> Statik Consultants. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
-Initial Statik Consultants website
