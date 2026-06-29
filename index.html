@@ -4,92 +4,150 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Statik Consultants | Data, Analytics & AI Consulting</title>
-  <meta name="description" content="Statik Consultants helps retail, logistics, and healthcare organizations turn operational data into practical intelligence and measurable business improvement." />
+
+  <meta name="description" content="Statik Consultants helps retail, logistics, and healthcare organisations turn fragmented operational data into practical intelligence and measurable business improvement." />
 
   <link rel="stylesheet" href="style.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@700;800;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#home" class="logo">
-        <span class="logo-mark">⌁</span>
+        <span class="logo-icon">
+          <svg viewBox="0 0 100 100">
+            <path d="M10 50 L35 50 L45 20 L55 80 L65 50 L90 50" />
+          </svg>
+        </span>
         <span>
           <strong>STATIK</strong>
           <small>CONSULTANTS</small>
         </span>
       </a>
 
-      <button class="menu-toggle" id="menuToggle">☰</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
 
       <div class="nav-links" id="navLinks">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#industries">Industries</a>
+        <a href="#insights">Insights</a>
         <a href="#contact" class="nav-cta">Book a Workshop</a>
       </div>
     </div>
   </nav>
 
   <header class="hero" id="home">
-    <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1576485303975-27a3d132cb0a?q=80&w=2070&auto=format&fit=crop');"></div>
-    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?q=80&w=2072&auto=format&fit=crop');"></div>
-    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=2070&auto=format&fit=crop');"></div>
+    <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1529528070131-eda9f3e90919?q=80&w=2000&auto=format&fit=crop');"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?q=80&w=2072&auto=format&fit=crop');"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=2070&auto=format&fit=crop');"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop');"></div>
 
     <div class="hero-overlay"></div>
+    <canvas id="dataCanvas" class="data-canvas"></canvas>
 
     <div class="hero-content">
-      <p class="eyebrow">Signal Stability</p>
+      <p class="eyebrow light">Signal Stability</p>
       <h1>
         Better decisions.<br>
         Better systems.<br>
         <span>Better tomorrows.</span>
       </h1>
       <p class="hero-text">
-        We help retail, logistics, and healthcare organizations turn fragmented operational data into practical intelligence and measurable business improvement.
+        We help retail, logistics, and healthcare organisations turn fragmented operational data into practical intelligence and measurable business improvement.
       </p>
-      <div class="hero-buttons">
+      <div class="hero-actions">
         <a href="#contact" class="btn primary">Book a Discovery Workshop</a>
-        <a href="#services" class="btn secondary">Explore Our Services</a>
+        <a href="#services" class="btn outline-light">Explore Our Services</a>
       </div>
     </div>
 
-    <div class="slider-dots">
-      <button class="dot active"></button>
-      <button class="dot"></button>
-      <button class="dot"></button>
+    <div class="slider-controls">
+      <button class="slider-dot active" aria-label="Slide 1"></button>
+      <button class="slider-dot" aria-label="Slide 2"></button>
+      <button class="slider-dot" aria-label="Slide 3"></button>
+      <button class="slider-dot" aria-label="Slide 4"></button>
     </div>
   </header>
 
   <main>
+    <section class="trust-bar">
+      <div class="container trust-grid">
+        <div>
+          <strong>3</strong>
+          <span>Sectors of deep focus</span>
+          <small>Retail · Logistics · Healthcare</small>
+        </div>
+        <div>
+          <strong>Weeks</strong>
+          <span>To first measurable insight</span>
+          <small>Not months of build-up</small>
+        </div>
+        <div>
+          <strong>100%</strong>
+          <span>POPIA-aligned by default</span>
+          <small>Governed, secure practices</small>
+        </div>
+        <div>
+          <strong>25+</strong>
+          <span>Engagements delivered</span>
+          <small>Replace with real figure later</small>
+        </div>
+      </div>
+    </section>
+
     <section class="section about" id="about">
       <div class="container two-col">
         <div>
           <p class="eyebrow dark">Our Philosophy</p>
           <h2>Intelligence should create better tomorrows.</h2>
           <p>
-            Statik Consultants was shaped by a simple but powerful truth: in environments where every decision carries weight, data is never abstract.
+            Statik Consultants was shaped by a simple but powerful truth born from our township origins: in environments where every decision carries weight, data is never abstract.
           </p>
           <p>
-            We believe better decisions, grounded in real data, honest analysis, and practical intelligence, can change outcomes for businesses and the people who depend on them.
+            We built this company on the belief that better decisions, grounded in real data, honest analysis, and practical intelligence, can change outcomes.
           </p>
+          <a href="#origin" class="text-link">Read our origin story →</a>
         </div>
 
         <div class="image-card">
           <img src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&w=2069&auto=format&fit=crop" alt="Professionals collaborating">
-          <div class="image-card-content">
+          <div>
             <h3>We build intelligence that works in the real world.</h3>
             <ul>
               <li>South African context. Global-grade analytics.</li>
               <li>Outcomes first. Always.</li>
+              <li>We work with what you have.</li>
               <li>Start focused. Prove value. Then scale.</li>
             </ul>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section rooted">
+      <div class="container two-col">
+        <div class="photo-grid">
+          <img src="https://images.unsplash.com/photo-1529528070131-eda9f3e90919?q=80&w=1400&auto=format&fit=crop" alt="Cape Town">
+          <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?q=80&w=1400&auto=format&fit=crop" alt="South Africa aerial view">
+          <img src="https://images.unsplash.com/photo-1581596326467-be575967dbfa?q=80&w=1400&auto=format&fit=crop" alt="South African coast">
+          <img src="https://images.unsplash.com/photo-1602578984228-c98a9b995f3e?q=80&w=1400&auto=format&fit=crop" alt="Johannesburg">
+        </div>
+
+        <div>
+          <p class="eyebrow dark">Rooted Here</p>
+          <h2>Built in South Africa, for South African operations.</h2>
+          <p>
+            From the Cape Town container terminal to a Johannesburg trading floor to a clinic in between, we work where the data actually lives.
+          </p>
+          <p>
+            We understand load-shedding, POPIA, operational pressure, and the realities of running businesses here, because this is home.
+          </p>
         </div>
       </div>
     </section>
@@ -99,33 +157,33 @@
         <p class="eyebrow dark">What We Do</p>
         <h2>From visibility to foresight to optimization.</h2>
 
-        <div class="cards">
+        <div class="cards four">
           <article class="card">
             <div class="icon">▣</div>
-            <p class="card-tag">See clearly. Decide confidently.</p>
+            <small>See clearly. Decide confidently.</small>
             <h3>Data Analytics</h3>
-            <p>Turn raw, fragmented data into structured visibility through dashboards, KPI monitoring, and a single source of truth.</p>
+            <p>Dashboards, KPI monitoring, commercial analytics, and a single source of truth.</p>
           </article>
 
           <article class="card">
             <div class="icon">◎</div>
-            <p class="card-tag">Stop reacting. Start anticipating.</p>
+            <small>Stop reacting. Start anticipating.</small>
             <h3>Data Science</h3>
-            <p>Move beyond what happened to what is likely to happen next using forecasting, segmentation, and predictive models.</p>
+            <p>Forecasting, segmentation, risk prediction, anomaly detection, and predictive modelling.</p>
           </article>
 
           <article class="card">
             <div class="icon">✦</div>
-            <p class="card-tag">Intelligence embedded where it matters.</p>
+            <small>Intelligence embedded where it matters.</small>
             <h3>AI Solutions</h3>
-            <p>Design practical AI tools, predictive alerts, optimization engines, and automation that support real workflows.</p>
+            <p>Optimization engines, predictive alerts, decision support models, and process automation.</p>
           </article>
 
           <article class="card">
             <div class="icon">↗</div>
-            <p class="card-tag">Know where to start.</p>
+            <small>Know where to start.</small>
             <h3>Decision Advisory</h3>
-            <p>Identify the highest-value analytics and AI opportunities and build a roadmap connected to measurable outcomes.</p>
+            <p>Discovery workshops, maturity assessments, use-case prioritisation, and roadmap development.</p>
           </article>
         </div>
       </div>
@@ -137,26 +195,160 @@
         <h2>Three industries. One belief. Better data creates better outcomes.</h2>
 
         <div class="industry-grid">
-          <article class="industry-card" style="background-image: url('https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?q=80&w=2072&auto=format&fit=crop');">
+          <article class="industry-card" style="background-image:url('https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?q=80&w=2072&auto=format&fit=crop');">
             <div>
               <h3>Retail</h3>
               <p>Margin analytics, pricing optimization, demand forecasting, and inventory visibility.</p>
             </div>
           </article>
 
-          <article class="industry-card" style="background-image: url('https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=2070&auto=format&fit=crop');">
+          <article class="industry-card" style="background-image:url('https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=2070&auto=format&fit=crop');">
             <div>
               <h3>Logistics</h3>
               <p>Cost-to-serve visibility, route optimization, warehouse analytics, and supply chain risk forecasting.</p>
             </div>
           </article>
 
-          <article class="industry-card" style="background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop');">
+          <article class="industry-card" style="background-image:url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop');">
             <div>
               <h3>Healthcare</h3>
               <p>Patient flow analytics, demand planning, operational efficiency, and POPIA-aligned data practices.</p>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sa-marquee">
+      <div class="container">
+        <p class="eyebrow light">On The Ground</p>
+        <h2>Where the work happens.</h2>
+      </div>
+      <div class="marquee-track">
+        <img src="https://images.unsplash.com/photo-1529528070131-eda9f3e90919?q=80&w=1400&auto=format&fit=crop" alt="">
+        <img src="https://images.unsplash.com/photo-1602578984228-c98a9b995f3e?q=80&w=1400&auto=format&fit=crop" alt="">
+        <img src="https://images.unsplash.com/photo-1581596326467-be575967dbfa?q=80&w=1400&auto=format&fit=crop" alt="">
+        <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?q=80&w=1400&auto=format&fit=crop" alt="">
+        <img src="https://images.unsplash.com/photo-1529528070131-eda9f3e90919?q=80&w=1400&auto=format&fit=crop" alt="">
+      </div>
+    </section>
+
+    <section class="section process">
+      <div class="container">
+        <p class="eyebrow dark">How An Engagement Works</p>
+        <h2>A clear path from pressure to payoff.</h2>
+
+        <div class="cards four">
+          <article class="card process-card">
+            <b>01</b>
+            <h3>Discovery Workshop</h3>
+            <p>A focused session where we map your pressure points, data, and decisions.</p>
+            <small>60 to 90 minutes</small>
+          </article>
+
+          <article class="card process-card">
+            <b>02</b>
+            <h3>Opportunity Assessment</h3>
+            <p>We identify where analytics and AI will create the most value.</p>
+            <small>Prioritised roadmap</small>
+          </article>
+
+          <article class="card process-card">
+            <b>03</b>
+            <h3>Build The First Win</h3>
+            <p>We deliver one focused solution against real data.</p>
+            <small>Proof over promises</small>
+          </article>
+
+          <article class="card process-card">
+            <b>04</b>
+            <h3>Prove, Then Scale</h3>
+            <p>Once value is proven, we extend it across teams, sectors, and decisions.</p>
+            <small>Outcomes tracked</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials">
+      <div class="container">
+        <p class="eyebrow dark">What Clients Say</p>
+        <h2>Outcomes people remember.</h2>
+
+        <div class="cards three">
+          <article class="testimonial">
+            <p>“They did not hand us another dashboard. They changed a decision we make every single week.”</p>
+            <strong>Commercial Director</strong>
+            <small>National Retailer</small>
+          </article>
+
+          <article class="testimonial">
+            <p>“The discovery workshop alone was worth it. For the first time we agreed on where the bottleneck was.”</p>
+            <strong>Head of Operations</strong>
+            <small>Logistics Group</small>
+          </article>
+
+          <article class="testimonial">
+            <p>“What stood out was the respect for our context. They built around the systems we actually run.”</p>
+            <strong>Chief Data Officer</strong>
+            <small>Private Healthcare</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section insights" id="insights">
+      <div class="container">
+        <p class="eyebrow dark">Insights</p>
+        <h2>Field notes on data that decides.</h2>
+
+        <div class="insight-grid">
+          <article>
+            <span>Retail Intelligence</span>
+            <h3>Why your forecast keeps missing, and what to fix first</h3>
+            <p>Practical thinking on margin, demand, and commercial decision-making.</p>
+          </article>
+
+          <article>
+            <span>Healthcare</span>
+            <h3>A practical POPIA checklist for healthcare analytics</h3>
+            <p>Responsible analytics for teams handling sensitive operational and patient data.</p>
+          </article>
+
+          <article>
+            <span>Logistics</span>
+            <h3>Cost-to-serve: the number most logistics teams cannot see</h3>
+            <p>How visibility changes cost, delivery, routing, and supply chain performance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq">
+      <div class="container narrow">
+        <p class="eyebrow dark center">Common Questions</p>
+        <h2>The things executives ask first.</h2>
+
+        <div class="faq-list">
+          <div class="faq-item active">
+            <button>Where do we start? <span>−</span></button>
+            <p>With a Discovery Workshop: a focused 60 to 90 minute session where we map your pressures, your data, and the decisions that matter.</p>
+          </div>
+
+          <div class="faq-item">
+            <button>How long before we see value? <span>+</span></button>
+            <p>We design engagements so the first measurable win lands in weeks, not quarters.</p>
+          </div>
+
+          <div class="faq-item">
+            <button>Do we need clean data already? <span>+</span></button>
+            <p>No. We work with what you have and help turn messy real-world data into something useful.</p>
+          </div>
+
+          <div class="faq-item">
+            <button>How do you handle POPIA? <span>+</span></button>
+            <p>We use POPIA-aligned practices, de-identification where appropriate, secure handling, and role-based access.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -171,8 +363,8 @@
           </p>
 
           <div class="steps">
-            <div><strong>1</strong> We review your request</div>
-            <div><strong>2</strong> We schedule a discovery workshop</div>
+            <div><strong>1</strong> We review your submission within 24 hours</div>
+            <div><strong>2</strong> We schedule your workshop</div>
             <div><strong>3</strong> We come prepared</div>
             <div><strong>4</strong> You leave with clarity</div>
           </div>
@@ -202,13 +394,13 @@
           <label>Biggest data challenge? *</label>
           <textarea rows="5" required></textarea>
 
-          <button type="submit" class="btn primary full">Submit Request</button>
+          <button class="btn primary full" type="submit">Submit Request</button>
           <p class="form-note">By submitting, you agree to responsible, POPIA-aligned data handling.</p>
         </form>
       </div>
     </section>
 
-    <section class="cta">
+    <section class="final-cta">
       <div class="container">
         <h2>Ready to find your highest-impact opportunity?</h2>
         <p>Tell us where the pressure is, and we will show you where the data can help.</p>
@@ -221,7 +413,7 @@
     <div class="container footer-grid">
       <div>
         <h3>statik<span>consultants</span></h3>
-        <p>Turning uncertainty into direction through data, analytics, and AI.</p>
+        <p>Turning uncertainty into direction through data, analytics, and AI, so that better decisions create better tomorrows.</p>
       </div>
 
       <div>
@@ -230,14 +422,15 @@
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#industries">Industries</a>
+        <a href="#insights">Insights</a>
         <a href="#contact">Contact</a>
       </div>
 
       <div>
         <h4>Contact</h4>
-        <p>info@statikconsultants.co.za</p>
+        <p>contact@statikconsultants.com</p>
         <p>Cape Town, South Africa</p>
-        <p>POPIA-aligned data practices</p>
+        <p>POPIA Compliant</p>
       </div>
     </div>
 
