@@ -370,8 +370,12 @@
           </div>
         </div>
 
-        <form class="contact-form" id="contactForm">
+        <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
           <h3>Book a Discovery Workshop</h3>
+          <input type="hidden" name="access_key" value="07d8dda3-f676-433b-be36-cb68d9998234">
+<input type="hidden" name="subject" value="New Discovery Workshop Booking - Statik Consultants">
+<input type="hidden" name="from_name" value="Statik Consultants Website">
+<input type="checkbox" name="botcheck" style="display:none;">
 
           <label>Full Name *</label>
           <input type="text" required>
