@@ -372,34 +372,37 @@
 
         <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
           <h3>Book a Discovery Workshop</h3>
+
           <input type="hidden" name="access_key" value="07d8dda3-f676-433b-be36-cb68d9998234">
-<input type="hidden" name="subject" value="New Discovery Workshop Booking - Statik Consultants">
-<input type="hidden" name="from_name" value="Statik Consultants Website">
-<input type="checkbox" name="botcheck" style="display:none;">
+          <input type="hidden" name="subject" value="New Discovery Workshop Booking - Statik Consultants">
+          <input type="hidden" name="from_name" value="Statik Consultants Website">
+          <input type="hidden" name="redirect" value="https://www.statikconsultants.co.za/#contact">
+          <input type="checkbox" name="botcheck" style="display:none;">
 
           <label>Full Name *</label>
-          <input type="text" required>
+          <input type="text" name="name" required>
 
           <label>Organization *</label>
-          <input type="text" required>
+          <input type="text" name="organization" required>
 
           <label>Industry *</label>
-          <select required>
+          <select name="industry" required>
             <option value="">Select Industry</option>
-            <option>Retail</option>
-            <option>Logistics & Supply Chain</option>
-            <option>Healthcare</option>
-            <option>Other</option>
+            <option value="Retail">Retail</option>
+            <option value="Logistics & Supply Chain">Logistics & Supply Chain</option>
+            <option value="Healthcare">Healthcare</option>
+            <option value="Other">Other</option>
           </select>
 
           <label>Email Address *</label>
-          <input type="email" required>
+          <input type="email" name="email" required>
 
           <label>Biggest data challenge? *</label>
-          <textarea rows="5" required></textarea>
+          <textarea name="message" rows="5" required></textarea>
 
-          <button class="btn primary full" type="submit">Submit Request</button>
+          <button class="btn primary full" type="submit" id="submitBtn">Submit Request</button>
           <p class="form-note">By submitting, you agree to responsible, POPIA-aligned data handling.</p>
+          <p id="formStatus" class="form-note" style="display:none;"></p>
         </form>
       </div>
     </section>
@@ -432,7 +435,7 @@
 
       <div>
         <h4>Contact</h4>
-        <p>contact@statikconsultants.com</p>
+        <p>smdhlala@gmail.com</p>
         <p>Cape Town, South Africa</p>
         <p>POPIA Compliant</p>
       </div>
@@ -444,5 +447,45 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <script>
+    const workshopForm = document.getElementById("contactForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const formStatus = document.getElementById("formStatus");
+
+    if (workshopForm) {
+      workshopForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
+        formStatus.style.display = "block";
+        formStatus.textContent = "Sending your workshop request...";
+
+        const formData = new FormData(workshopForm);
+
+        try {
+          const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+          });
+
+          const result = await response.json();
+
+          if (result.success) {
+            formStatus.textContent = "Thank you. Your workshop request has been sent successfully.";
+            workshopForm.reset();
+          } else {
+            formStatus.textContent = "Something went wrong. Please try again or email smdhlala@gmail.com directly.";
+          }
+        } catch (error) {
+          formStatus.textContent = "Network error. Please try again or email smdhlala@gmail.com directly.";
+        }
+
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit Request";
+      });
+    }
+  </script>
 </body>
 </html>
