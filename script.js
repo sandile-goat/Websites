@@ -20,6 +20,11 @@ document.querySelectorAll(".nav-links a").forEach(link => {
   });
 });
 
+
+/* =========================
+   HERO SLIDER
+========================= */
+
 const slides = document.querySelectorAll(".hero-slide");
 const dots = document.querySelectorAll(".slider-dot");
 let currentSlide = 0;
@@ -46,6 +51,11 @@ if (slides.length > 0 && dots.length > 0) {
   }, 7000);
 }
 
+
+/* =========================
+   FAQ
+========================= */
+
 document.querySelectorAll(".faq-item button").forEach(button => {
   button.addEventListener("click", () => {
     const item = button.parentElement;
@@ -55,6 +65,7 @@ document.querySelectorAll(".faq-item button").forEach(button => {
       faq.classList.remove("active");
 
       const span = faq.querySelector("span");
+
       if (span) {
         span.textContent = "+";
       }
@@ -64,6 +75,7 @@ document.querySelectorAll(".faq-item button").forEach(button => {
       item.classList.add("active");
 
       const span = button.querySelector("span");
+
       if (span) {
         span.textContent = "−";
       }
@@ -71,72 +83,259 @@ document.querySelectorAll(".faq-item button").forEach(button => {
   });
 });
 
+
+/* =========================
+   CURRENT YEAR
+========================= */
+
 const year = document.getElementById("year");
 
 if (year) {
   year.textContent = new Date().getFullYear();
 }
 
+
+/* =========================
+   WORKSHOP BOOKING FORM
+========================= */
+
+const form = document.querySelector(".contact-form");
+
+if (form) {
+  form.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    const originalButtonText = submitButton.textContent;
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending Request...";
+
+    const formData = new FormData(form);
+
+    try {
+
+      const response = await fetch(
+        "https://api.web3forms.com/submit",
+        {
+          method: "POST",
+          body: formData
+        }
+      );
+
+      const result = await response.json();
+
+      if (result.success) {
+
+        form.innerHTML = `
+          <div style="
+            text-align:center;
+            padding:55px 25px;
+          ">
+
+            <div style="
+              width:70px;
+              height:70px;
+              margin:0 auto 25px;
+              border-radius:50%;
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              background:#0b1f3a;
+              color:#00e5ff;
+              font-size:34px;
+              font-weight:bold;
+            ">
+              ✓
+            </div>
+
+            <h3 style="margin-bottom:15px;">
+              Thank You for Booking a Discovery Workshop
+            </h3>
+
+            <p style="
+              font-size:17px;
+              line-height:1.7;
+              margin-bottom:15px;
+            ">
+              Your request has been successfully received.
+              A member of the Statik Consultants team will be
+              in touch shortly to discuss the next steps.
+            </p>
+
+            <p style="
+              font-weight:600;
+              margin-top:25px;
+            ">
+              Better decisions start with the right conversation.
+            </p>
+
+          </div>
+        `;
+
+      } else {
+
+        alert(
+          "We couldn't send your request. Please try again."
+        );
+
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
+
+    } catch (error) {
+
+      alert(
+        "We couldn't send your request. Please check your connection and try again."
+      );
+
+      submitButton.disabled = false;
+      submitButton.textContent = originalButtonText;
+    }
+
+  });
+}
+
+
+/* =========================
+   DATA PARTICLE ANIMATION
+========================= */
+
 const canvas = document.getElementById("dataCanvas");
 
 if (canvas) {
+
   const ctx = canvas.getContext("2d");
+
   let particles = [];
 
   function resizeCanvas() {
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    particles = Array.from({ length: 85 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4
-    }));
+    particles = Array.from(
+      { length: 85 },
+      () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4
+      })
+    );
   }
 
+
   function drawParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.clearRect(
+      0,
+      0,
+      canvas.width,
+      canvas.height
+    );
 
     particles.forEach(p => {
+
       p.x += p.vx;
       p.y += p.vy;
 
-      if (p.x < 0 || p.x > canvas.width) {
+      if (
+        p.x < 0 ||
+        p.x > canvas.width
+      ) {
         p.vx *= -1;
       }
 
-      if (p.y < 0 || p.y > canvas.height) {
+      if (
+        p.y < 0 ||
+        p.y > canvas.height
+      ) {
         p.vy *= -1;
       }
 
       ctx.beginPath();
-      ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(0,229,255,0.85)";
+
+      ctx.arc(
+        p.x,
+        p.y,
+        2,
+        0,
+        Math.PI * 2
+      );
+
+      ctx.fillStyle =
+        "rgba(0,229,255,0.85)";
+
       ctx.fill();
     });
 
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
+
+    for (
+      let i = 0;
+      i < particles.length;
+      i++
+    ) {
+
+      for (
+        let j = i + 1;
+        j < particles.length;
+        j++
+      ) {
+
+        const dx =
+          particles[i].x -
+          particles[j].x;
+
+        const dy =
+          particles[i].y -
+          particles[j].y;
+
+        const distance =
+          Math.sqrt(
+            dx * dx +
+            dy * dy
+          );
+
 
         if (distance < 120) {
+
           ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(123,97,255,${1 - distance / 120})`;
+
+          ctx.moveTo(
+            particles[i].x,
+            particles[i].y
+          );
+
+          ctx.lineTo(
+            particles[j].x,
+            particles[j].y
+          );
+
+          ctx.strokeStyle =
+            `rgba(123,97,255,${
+              1 - distance / 120
+            })`;
+
           ctx.lineWidth = 0.6;
+
           ctx.stroke();
         }
       }
     }
 
-    requestAnimationFrame(drawParticles);
+    requestAnimationFrame(
+      drawParticles
+    );
   }
 
-  window.addEventListener("resize", resizeCanvas);
+
+  window.addEventListener(
+    "resize",
+    resizeCanvas
+  );
 
   resizeCanvas();
   drawParticles();
