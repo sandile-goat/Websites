@@ -1,15 +1,22 @@
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-  menuToggle.textContent = navLinks.classList.contains("show") ? "×" : "☰";
-});
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+    menuToggle.textContent = navLinks.classList.contains("show") ? "×" : "☰";
+  });
+}
 
 document.querySelectorAll(".nav-links a").forEach(link => {
   link.addEventListener("click", () => {
-    navLinks.classList.remove("show");
-    menuToggle.textContent = "☰";
+    if (navLinks) {
+      navLinks.classList.remove("show");
+    }
+
+    if (menuToggle) {
+      menuToggle.textContent = "☰";
+    }
   });
 });
 
@@ -18,11 +25,14 @@ const dots = document.querySelectorAll(".slider-dot");
 let currentSlide = 0;
 
 function showSlide(index) {
+  if (!slides.length || !dots.length) return;
+
   slides.forEach(slide => slide.classList.remove("active"));
   dots.forEach(dot => dot.classList.remove("active"));
 
   slides[index].classList.add("active");
   dots[index].classList.add("active");
+
   currentSlide = index;
 }
 
@@ -30,9 +40,11 @@ dots.forEach((dot, index) => {
   dot.addEventListener("click", () => showSlide(index));
 });
 
-setInterval(() => {
-  showSlide((currentSlide + 1) % slides.length);
-}, 7000);
+if (slides.length > 0 && dots.length > 0) {
+  setInterval(() => {
+    showSlide((currentSlide + 1) % slides.length);
+  }, 7000);
+}
 
 document.querySelectorAll(".faq-item button").forEach(button => {
   button.addEventListener("click", () => {
@@ -41,34 +53,32 @@ document.querySelectorAll(".faq-item button").forEach(button => {
 
     document.querySelectorAll(".faq-item").forEach(faq => {
       faq.classList.remove("active");
-      faq.querySelector("span").textContent = "+";
+
+      const span = faq.querySelector("span");
+      if (span) {
+        span.textContent = "+";
+      }
     });
 
     if (!isActive) {
       item.classList.add("active");
-      button.querySelector("span").textContent = "−";
+
+      const span = button.querySelector("span");
+      if (span) {
+        span.textContent = "−";
+      }
     }
   });
 });
 
 const year = document.getElementById("year");
-if (year) year.textContent = new Date().getFullYear();
 
-const form = document.getElementById("contactForm");
-if (form) {
-  form.addEventListener("submit", e => {
-    e.preventDefault();
-    form.innerHTML = `
-      <div style="text-align:center;padding:50px 20px">
-        <h3>Request Received</h3>
-        <p>Thank you. Your discovery workshop request has been recorded.</p>
-        <p>A Statik Consultants representative will contact you soon.</p>
-      </div>
-    `;
-  });
+if (year) {
+  year.textContent = new Date().getFullYear();
 }
 
 const canvas = document.getElementById("dataCanvas");
+
 if (canvas) {
   const ctx = canvas.getContext("2d");
   let particles = [];
@@ -76,6 +86,7 @@ if (canvas) {
   function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+
     particles = Array.from({ length: 85 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
@@ -91,8 +102,13 @@ if (canvas) {
       p.x += p.vx;
       p.y += p.vy;
 
-      if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+      if (p.x < 0 || p.x > canvas.width) {
+        p.vx *= -1;
+      }
+
+      if (p.y < 0 || p.y > canvas.height) {
+        p.vy *= -1;
+      }
 
       ctx.beginPath();
       ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
@@ -121,6 +137,7 @@ if (canvas) {
   }
 
   window.addEventListener("resize", resizeCanvas);
+
   resizeCanvas();
   drawParticles();
 }
