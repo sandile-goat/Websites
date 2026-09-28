@@ -1,0 +1,8 @@
+<!-- The e alone. The whole mark collapses at 16px: the two bowls merge and the
+     crossover fills in. The e survives, and it is the most distinctive element
+     in the mark, so it is the favicon rather than a shrunken logo. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="228 779 191 191" fill="none"
+     stroke="#A6532C" stroke-width="34" stroke-linecap="round">
+  <path d="M378.0 884.5A66.0 66.0 0 1 1 375.0 850.4"/>
+  <path d="M252 862C286 859 330 858 384 856"/>
+</svg>

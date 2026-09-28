@@ -1,0 +1,12 @@
+# Response headers for v6.2. GitHub Pages IGNORES this file: it cannot set
+# headers at all. This works as-is on Cloudflare Pages or Netlify, or as
+# Transform Rules if Cloudflare is put in front of GitHub Pages.
+# The page's own meta CSP still applies; browsers enforce both.
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: frame-ancestors 'none'
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()
+  Cross-Origin-Opener-Policy: same-origin
