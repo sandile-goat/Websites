@@ -19,44 +19,6 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
   <style>
-
-    /* SUCCESS MESSAGE */
-.form__done.success {
-  margin-top: 28px;
-  padding: 32px 20px;
-  text-align: center;
-  color: #146c2e;
-  background: #eefaf1;
-  border: 1px solid #b9e4c4;
-}
-
-.success-tick {
-  width: 90px;
-  height: 90px;
-  margin: 0 auto 20px;
-  border-radius: 50%;
-  background: #1f9d45;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 58px;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.success-title {
-  margin: 0 0 8px;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #146c2e;
-}
-
-.success-text {
-  margin: 0;
-  color: #356b43;
-  font-size: 1rem;
-}
     @font-face {
       font-family: "Bricolage Grotesque";
       src: url("/fonts/bricolage-grotesque-latin-standard-normal.woff2") format("woff2");
@@ -82,6 +44,10 @@
       --line: rgba(23, 23, 23, 0.18);
       --muted: #69645c;
       --accent: #e65b36;
+      --success: #1f9d45;
+      --success-dark: #146c2e;
+      --success-light: #eefaf1;
+      --success-line: #b9e4c4;
       --max: 1200px;
     }
 
@@ -392,9 +358,64 @@
       margin: 16px 0 0;
     }
 
-    .form__done {
-      color: var(--ink);
-      font-weight: 600;
+    /*
+      SUCCESS CONFIRMATION
+    */
+
+    .form__done.success {
+      margin-top: 28px;
+      padding: 34px 22px;
+      text-align: center;
+      color: var(--success-dark);
+      background: var(--success-light);
+      border: 1px solid var(--success-line);
+    }
+
+    .success-tick {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      background: var(--success);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 1;
+      box-shadow: 0 10px 30px rgba(31, 157, 69, 0.18);
+      animation: successPop 0.45s ease-out;
+    }
+
+    .success-title {
+      margin: 0 0 8px;
+      color: var(--success-dark);
+      font-size: 1.45rem;
+      font-weight: 700;
+    }
+
+    .success-text {
+      margin: 0;
+      color: #356b43;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    @keyframes successPop {
+      0% {
+        transform: scale(0.4);
+        opacity: 0;
+      }
+
+      70% {
+        transform: scale(1.1);
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     .site-footer {
@@ -460,6 +481,12 @@
       .hero {
         padding-top: 56px;
       }
+
+      .success-tick {
+        width: 84px;
+        height: 84px;
+        font-size: 54px;
+      }
     }
   </style>
 </head>
@@ -468,7 +495,10 @@
 
   <header class="site-header">
     <div class="wrap nav">
-      <a class="brand" href="/">Sinew Collective</a>
+
+      <a class="brand" href="/">
+        Sinew Collective
+      </a>
 
       <nav class="nav__links" aria-label="Main navigation">
         <a href="#what-we-do">What we do</a>
@@ -477,7 +507,10 @@
         <a href="#workshop">Book a workshop</a>
       </nav>
 
-      <a class="btn btn--solid" href="#workshop">Talk to us</a>
+      <a class="btn btn--solid" href="#workshop">
+        Talk to us
+      </a>
+
     </div>
   </header>
 
@@ -486,7 +519,9 @@
     <section class="hero">
       <div class="wrap">
 
-        <p class="eyebrow">Analytics · automation · Johannesburg</p>
+        <p class="eyebrow">
+          Analytics · automation · Johannesburg
+        </p>
 
         <h1>
           What your records already say.
@@ -499,6 +534,7 @@
         </p>
 
         <div class="hero__actions">
+
           <a class="btn btn--solid" href="#workshop">
             Book a discovery workshop
           </a>
@@ -506,6 +542,7 @@
           <a class="btn" href="#what-we-do">
             See what we do
           </a>
+
         </div>
 
       </div>
@@ -515,9 +552,15 @@
       <div class="wrap">
 
         <div class="section-head">
+
           <div>
-            <p class="eyebrow">Where we work</p>
-            <h2>Built around the systems you already use.</h2>
+            <p class="eyebrow">
+              Where we work
+            </p>
+
+            <h2>
+              Built around the systems you already use.
+            </h2>
           </div>
 
           <p>
@@ -526,70 +569,114 @@
             large part of the story. We help you turn those records into
             decisions.
           </p>
+
         </div>
 
         <div class="hero-grid">
 
           <article class="hero-card">
+
             <img
               src="/images/healthcare-hero.jpg"
               alt="Healthcare analytics"
               loading="lazy"
             >
+
             <div class="hero-card__body">
-              <p class="eyebrow">Healthcare</p>
-              <h3>See what is happening inside the practice.</h3>
+
+              <p class="eyebrow">
+                Healthcare
+              </p>
+
+              <h3>
+                See what is happening inside the practice.
+              </h3>
+
               <p>
                 Revenue, patient activity, claims, stock, appointments and
                 operational patterns brought into one usable view.
               </p>
+
             </div>
+
           </article>
 
           <article class="hero-card">
+
             <img
               src="/images/retail-hero.jpg"
               alt="Retail analytics"
               loading="lazy"
             >
+
             <div class="hero-card__body">
-              <p class="eyebrow">Retail</p>
-              <h3>Know what sells, where margin moves and what sits.</h3>
+
+              <p class="eyebrow">
+                Retail
+              </p>
+
+              <h3>
+                Know what sells, where margin moves and what sits.
+              </h3>
+
               <p>
                 Sales, products, stock, purchasing and customer behaviour
                 translated into practical commercial information.
               </p>
+
             </div>
+
           </article>
 
           <article class="hero-card">
+
             <img
               src="/images/logistics-hero.jpg"
               alt="Logistics analytics"
               loading="lazy"
             >
+
             <div class="hero-card__body">
-              <p class="eyebrow">Logistics</p>
-              <h3>Make movement visible.</h3>
+
+              <p class="eyebrow">
+                Logistics
+              </p>
+
+              <h3>
+                Make movement visible.
+              </h3>
+
               <p>
                 Orders, routes, turnaround times, service levels and operating
                 performance connected so teams can see where time and money
                 are being lost.
               </p>
+
             </div>
+
           </article>
 
         </div>
+
       </div>
     </section>
 
     <section id="what-we-do" class="services">
+
       <div class="wrap">
 
         <div class="section-head">
+
           <div>
-            <p class="eyebrow">What we do</p>
-            <h2>From raw records to something people can use.</h2>
+
+            <p class="eyebrow">
+              What we do
+            </p>
+
+            <h2>
+              From raw records to something people can use.
+            </h2>
+
           </div>
 
           <p>
@@ -597,55 +684,96 @@
             around it and create reporting or automation that fits the way your
             organisation actually operates.
           </p>
+
         </div>
 
         <div class="cards">
 
           <article class="card">
+
             <div class="card__body">
-              <div class="card__number">01</div>
-              <h3>Analytics &amp; business intelligence</h3>
+
+              <div class="card__number">
+                01
+              </div>
+
+              <h3>
+                Analytics &amp; business intelligence
+              </h3>
+
               <p>
                 Dashboards, reporting models, operational metrics and
                 management views built from your existing systems.
               </p>
+
             </div>
+
           </article>
 
           <article class="card">
+
             <div class="card__body">
-              <div class="card__number">02</div>
-              <h3>Data science</h3>
+
+              <div class="card__number">
+                02
+              </div>
+
+              <h3>
+                Data science
+              </h3>
+
               <p>
                 Customer behaviour, forecasting, segmentation, risk patterns
                 and predictive models where the data supports them.
               </p>
+
             </div>
+
           </article>
 
           <article class="card">
+
             <div class="card__body">
-              <div class="card__number">03</div>
-              <h3>Automation</h3>
+
+              <div class="card__number">
+                03
+              </div>
+
+              <h3>
+                Automation
+              </h3>
+
               <p>
                 Reduce repetitive reporting, spreadsheet handling and manual
                 operational work by connecting repeatable steps.
               </p>
+
             </div>
+
           </article>
 
         </div>
 
       </div>
+
     </section>
 
     <section>
+
       <div class="wrap">
 
         <div class="section-head">
+
           <div>
-            <p class="eyebrow">Start with one question</p>
-            <h2>You do not need a perfect data environment to begin.</h2>
+
+            <p class="eyebrow">
+              Start with one question
+            </p>
+
+            <h2>
+              You do not need a perfect data environment to begin.
+            </h2>
+
           </div>
 
           <p>
@@ -654,63 +782,92 @@
             restructuring, and what additional data would materially improve
             the answer.
           </p>
+
         </div>
 
         <div class="doors">
 
           <article class="door">
+
             <img
               src="/images/door-healthcare.jpg"
               alt="Healthcare data"
               loading="lazy"
             >
+
             <div class="door__body">
-              <h3>“Where is the practice losing revenue?”</h3>
+
+              <h3>
+                “Where is the practice losing revenue?”
+              </h3>
+
               <p>
                 Start with billing, appointments, claims or patient activity.
               </p>
+
             </div>
+
           </article>
 
           <article class="door">
+
             <img
               src="/images/door-retail.jpg"
               alt="Retail data"
               loading="lazy"
             >
+
             <div class="door__body">
-              <h3>“Which products actually drive the business?”</h3>
+
+              <h3>
+                “Which products actually drive the business?”
+              </h3>
+
               <p>
                 Start with a sales or stock export.
               </p>
+
             </div>
+
           </article>
 
           <article class="door">
+
             <img
               src="/images/door-logistics.jpg"
               alt="Logistics data"
               loading="lazy"
             >
+
             <div class="door__body">
-              <h3>“Where are delays and costs accumulating?”</h3>
+
+              <h3>
+                “Where are delays and costs accumulating?”
+              </h3>
+
               <p>
                 Start with orders, deliveries, routes or service records.
               </p>
+
             </div>
+
           </article>
 
         </div>
 
       </div>
+
     </section>
 
     <section id="workshop">
+
       <div class="wrap workshop">
 
         <div class="workshop__copy">
 
-          <p class="eyebrow">Discovery workshop</p>
+          <p class="eyebrow">
+            Discovery workshop
+          </p>
 
           <h2>
             Book a discovery workshop.
@@ -738,10 +895,16 @@
           novalidate
         >
 
+          <!--
+            IMPORTANT:
+            Replace YOUR_WEB3FORMS_ACCESS_KEY below with
+            your actual Web3Forms access key.
+          -->
+
           <input
             type="hidden"
             name="access_key"
-            value="07d8dda3-f676-433b-be36-cb68d9998234"
+            value="YOUR_WEB3FORMS_ACCESS_KEY"
           >
 
           <input
@@ -765,7 +928,10 @@
           <div class="form__grid">
 
             <div>
-              <label for="f-name">Full name</label>
+
+              <label for="f-name">
+                Full name
+              </label>
 
               <input
                 id="f-name"
@@ -774,10 +940,14 @@
                 maxlength="100"
                 required
               >
+
             </div>
 
             <div>
-              <label for="f-org">Organisation</label>
+
+              <label for="f-org">
+                Organisation
+              </label>
 
               <input
                 id="f-org"
@@ -786,26 +956,50 @@
                 maxlength="120"
                 required
               >
+
             </div>
 
             <div>
-              <label for="f-industry">Industry</label>
+
+              <label for="f-industry">
+                Industry
+              </label>
 
               <select
                 id="f-industry"
                 name="industry"
                 required
               >
-                <option value="">Select industry</option>
-                <option>Medical practice</option>
-                <option>Retail</option>
-                <option>Logistics and supply chain</option>
-                <option>Other</option>
+
+                <option value="">
+                  Select industry
+                </option>
+
+                <option>
+                  Medical practice
+                </option>
+
+                <option>
+                  Retail
+                </option>
+
+                <option>
+                  Logistics and supply chain
+                </option>
+
+                <option>
+                  Other
+                </option>
+
               </select>
+
             </div>
 
             <div>
-              <label for="f-email">Email address</label>
+
+              <label for="f-email">
+                Email address
+              </label>
 
               <input
                 id="f-email"
@@ -815,6 +1009,7 @@
                 maxlength="254"
                 required
               >
+
             </div>
 
           </div>
@@ -851,55 +1046,94 @@
           <p class="note">
             Submit the form and we’ll respond within one business day.
             How we handle your information:
-            <a href="/privacy/">privacy notice</a>.
+            <a href="/privacy/">
+              privacy notice
+            </a>.
           </p>
 
-          <p
+          <div
             class="form__done"
             id="f-done"
+            role="status"
+            aria-live="polite"
             hidden
-          ></p>
+          ></div>
 
         </form>
 
       </div>
+
     </section>
 
   </main>
 
   <footer class="site-footer">
+
     <div class="wrap">
 
       <div class="footer-grid">
 
         <div>
-          <h3>Sinew Collective</h3>
+
+          <h3>
+            Sinew Collective
+          </h3>
+
           <p>
             Analytics, data science and automation built around the records
             your organisation already produces.
           </p>
+
         </div>
 
         <div>
-          <p class="eyebrow">Navigate</p>
-          <p><a href="/">Home</a></p>
-          <p><a href="/who-we-are/">Who we are</a></p>
-          <p><a href="#workshop">Book a workshop</a></p>
+
+          <p class="eyebrow">
+            Navigate
+          </p>
+
+          <p>
+            <a href="/">
+              Home
+            </a>
+          </p>
+
+          <p>
+            <a href="/who-we-are/">
+              Who we are
+            </a>
+          </p>
+
+          <p>
+            <a href="#workshop">
+              Book a workshop
+            </a>
+          </p>
+
         </div>
 
         <div>
-          <p class="eyebrow">Contact</p>
+
+          <p class="eyebrow">
+            Contact
+          </p>
+
           <p>
             <a href="mailto:consult@sinewcollective.co.za">
               consult@sinewcollective.co.za
             </a>
           </p>
+
           <p>
             Johannesburg, South Africa
           </p>
+
           <p>
-            <a href="/privacy/">Privacy notice</a>
+            <a href="/privacy/">
+              Privacy notice
+            </a>
           </p>
+
         </div>
 
       </div>
@@ -909,37 +1143,70 @@
       </div>
 
     </div>
+
   </footer>
 
   <script>
     (function () {
 
-      var f = document.getElementById('enquiry');
+      var form = document.getElementById('enquiry');
       var done = document.getElementById('f-done');
 
-      if (!f) return;
+      if (!form) {
+        return;
+      }
 
       var fields = {
-        'f-name': ['Full name', 100],
-        'f-org': ['Organisation', 120],
-        'f-industry': ['Industry', 40],
-        'f-email': ['Email', 254],
-        'f-system': ['Systems', 200],
-        'f-more': ['Biggest data challenge', 1200]
+
+        'f-name': [
+          'Full name',
+          100
+        ],
+
+        'f-org': [
+          'Organisation',
+          120
+        ],
+
+        'f-industry': [
+          'Industry',
+          40
+        ],
+
+        'f-email': [
+          'Email',
+          254
+        ],
+
+        'f-system': [
+          'Systems',
+          200
+        ],
+
+        'f-more': [
+          'Biggest data challenge',
+          1200
+        ]
+
       };
 
-      var v = function (id) {
+      function getValue(id) {
+
         return document
           .getElementById(id)
           .value
           .trim()
           .slice(0, fields[id][1]);
-      };
 
-      function say(msg, id) {
+      }
+
+      function showMessage(message, id) {
 
         done.hidden = false;
-        done.textContent = msg;
+
+        done.classList.remove('success');
+
+        done.textContent = message;
 
         if (id) {
           document.getElementById(id).focus();
@@ -947,38 +1214,72 @@
 
       }
 
-      f.addEventListener('submit', function (e) {
+      function showSuccess() {
 
-        e.preventDefault();
+        done.hidden = false;
+
+        done.classList.add('success');
+
+        done.innerHTML =
+          '<div class="success-tick" aria-hidden="true">✓</div>' +
+          '<p class="success-title">' +
+          'Request successfully submitted!' +
+          '</p>' +
+          '<p class="success-text">' +
+          'Thank you for booking a discovery workshop. ' +
+          'We’ll be in touch within one business day.' +
+          '</p>';
+
+        done.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+
+      }
+
+      form.addEventListener('submit', function (event) {
+
+        event.preventDefault();
+
+        done.classList.remove('success');
 
         var missing = Object.keys(fields).filter(function (id) {
-          return !v(id);
+
+          return !getValue(id);
+
         });
 
         if (missing.length) {
 
-          say(
+          showMessage(
             'Fill in every field first. Missing: ' +
             missing.map(function (id) {
               return fields[id][0].toLowerCase();
-            }).join(', ') + '.',
+            }).join(', ') +
+            '.',
             missing[0]
           );
 
           return;
+
         }
 
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('f-email'))) {
+        if (
+          !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
+            getValue('f-email')
+          )
+        ) {
 
-          say(
+          showMessage(
             'Check the email address: it needs an @ and a domain.',
             'f-email'
           );
 
           return;
+
         }
 
-        var accessKey = f
+        var accessKey = form
           .querySelector('input[name="access_key"]')
           .value
           .trim();
@@ -988,22 +1289,27 @@
           accessKey === 'YOUR_WEB3FORMS_ACCESS_KEY'
         ) {
 
-          say(
+          showMessage(
             'The workshop form is not connected yet. Add your Web3Forms access key.'
           );
 
           return;
+
         }
 
-        var button = f.querySelector('button[type="submit"]');
+        var button = form.querySelector(
+          'button[type="submit"]'
+        );
+
         var originalText = button.textContent;
 
         button.disabled = true;
+
         button.textContent = 'Sending...';
 
         done.hidden = true;
 
-        var data = new FormData(f);
+        var data = new FormData(form);
 
         fetch(
           'https://api.web3forms.com/submit',
@@ -1014,22 +1320,26 @@
         )
 
         .then(function (response) {
+
+          if (!response.ok) {
+            throw new Error('Submission failed');
+          }
+
           return response.json();
+
         })
 
         .then(function (result) {
 
           if (result.success) {
 
-            f.reset();
+            form.reset();
 
-            say(
-              'Thank you for booking a discovery workshop. We’ll be in touch within one business day.'
-            );
+            showSuccess();
 
           } else {
 
-            say(
+            showMessage(
               'We could not send your request. Please try again or email consult@sinewcollective.co.za.'
             );
 
@@ -1039,7 +1349,7 @@
 
         .catch(function () {
 
-          say(
+          showMessage(
             'We could not send your request. Please try again or email consult@sinewcollective.co.za.'
           );
 
@@ -1048,6 +1358,7 @@
         .finally(function () {
 
           button.disabled = false;
+
           button.textContent = originalText;
 
         });
